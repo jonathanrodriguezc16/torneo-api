@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://db:27017/torneo
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  db:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:
