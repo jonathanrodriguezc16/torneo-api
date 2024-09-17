@@ -1,4 +1,3 @@
-// controllers/partidoController.js
 const Partido = require('../models/Partido');
 const Equipo = require('../models/Equipo');
 
